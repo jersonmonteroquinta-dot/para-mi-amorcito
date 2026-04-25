@@ -2,134 +2,386 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para mi amor Alejandra ❤️</title>
+<title>Nuestro espacio de amor</title>
+
 <style>
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0b0b0b;
-  color: white;
-  overflow-x: hidden;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: pink;
+    overflow-x: hidden;
 }
 
-#loader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
+/* Botones */
+button {
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ff4d6d;
+    color: white;
 }
 
-.heart {
-  font-size: 50px;
-  animation: beat 1s infinite;
-}
-
-@keyframes beat {
-  0%,100%{transform: scale(1);} 
-  50%{transform: scale(1.3);} 
-}
-
-.content {
-  display: none;
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
+/* Pantallas */
 .section {
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s forwards;
+    display: none;
+    text-align: center;
+    padding: 40px;
 }
 
-.section img {
-  width: 100%;
-  border-radius: 15px;
-  margin-top: 10px;
+.active {
+    display: block;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Corazones */
+.heart {
+    position: fixed;
+    color: red;
+    font-size: 20px;
+    animation: float 5s infinite;
 }
 
-.final {
-  text-align: center;
-  font-size: 20px;
-  margin-top: 50px;
-}
-
-.btn {
-  display: block;
-  margin: 20px auto;
-  padding: 12px 20px;
-  font-size: 16px;
-  background: #ff4d6d;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
+@keyframes float {
+    0% { transform: translateY(0); opacity: 1;}
+    100% { transform: translateY(-800px); opacity: 0;}
 }
 </style>
 </head>
+
 <body>
 
-<div id="loader">
-  <h1>Para mi amor Alejandra</h1>
-  <div class="heart">❤️</div>
-  <button class="btn" onclick="iniciar()">Entrar</button>
+<!-- Pantalla inicio -->
+<div id="inicio" class="section active">
+    <h1>💗 Bienvenida 💗</h1>
+    <button onclick="mostrar('menu')">Nuestro pequeño espacio de amor</button>
 </div>
 
-<div class="content">
+<!-- Menú -->
+<div id="menu" class="section">
+    <h2>✨ Nuestro mundo ✨</h2>
 
-<audio id="music" controls loop preload="auto">
-  <source src="cancion.mp3" type="audio/mpeg">
-</audio>
-
-<div class="section" style="animation-delay:1s">
-  <p>Todo comenzó en una app para hacer amistades, algo que parecía tan simple, pero que terminó cambiando todo en mi vida. No imaginaba que entre tantas personas, aparecerías tú… alguien tan especial, alguien que poco a poco empezó a ocupar un lugar único en mi corazón.</p>
-  <img src="Captura de pantalla (13).png">
+    <button onclick="mostrar('anime')">Versiones Anime 💏</button><br><br>
+    <button onclick="mostrar('carta')">Carta 💌</button><br><br>
+    <button onclick="mostrar('fotos')">Fotos privadas 💞🔥</button><br><br>
+    <button onclick="mostrar('video')">Nuestro video 💕🥰</button><br><br>
+    <button onclick="mostrar('musica')">Canciones especiales 🎵💞</button><br><br>
+    <button onclick="mostrar('historia')">Nuestra historia 💖</button><br><br>
+    <button onclick="mostrar('nosotros')">Fotos de nosotros y graciosas jsjs 💗</button><br><br>
+    <button onclick="mostrar('bio')">Nuestra informacion 💗</button><br><br>
+    <button onclick="mostrar('Plan de amor')">Plan de amor 💞</button><br><br>
 </div>
 
-<div class="section" style="animation-delay:2s">
-  <p>Nuestro acercamiento fue lento, pero hermoso. Pasábamos tiempo viendo películas juntos en Rave, compartiendo risas, comentarios y silencios que decían más que mil palabras. Sin darnos cuenta, cada momento nos unía más.</p>
-  <img src="Captura de pantalla (21).png">
+<!-- Anime -->
+<div id="anime" class="section">
+    <h2>💑 Versiones Anime</h2>
+
+<p>Versión 1</p>
+<img src="foto1.jpg" width="200"><br><br>
+
+<p>Versión 2</p>
+<img src="foto2.jpg" width="200"><br><br>
+
+<p>Versión 3</p>
+<img src="foto3.jpg" width="200"><br><br>
+
+    <button onclick="mostrar('menu')">Volver</button>
 </div>
 
-<div class="section" style="animation-delay:3s">
-  <p>Luego llegó nuestra primera llamada… ese momento donde todo se volvió más real. Escuchar tu voz fue algo que jamás olvidaré, fue ahí donde supe que esto iba en serio, que lo que sentía por ti no era cualquier cosa.</p>
-  <img src="Captura de pantalla (26).png">
+<!-- Carta -->
+<div id="carta" class="section">
+    <h2>📖 Carta</h2>
+
+  <p style="max-width: 600px; margin: auto; font-size: 18px; line-height: 1.6;">
+Mi amorcito:
+
+Todo estos 4 meses que llevamos han sido increibles y quiero decirte que han sido increibles.
+
+hemos vivido mucho verdad? jsjsj, Alegrias, momentos divertidos, risas, siestas, besos, momentos bien uff y peleas.
+
+Ahora estamos en una de esas, pero no es nada que no sepamos afrontar con madures jsjs, ya que otros hubieran discutido
+
+hasta los insultos, o ha no hablarse. Pero nosotros nos mantenemos comunicandonos y aprecio eso, que apesar de todo no
+
+dejamos de querernos y como dijo tsukasa:Lo mas importante para mi es tu vida. Ahi es donde entiendo mi error de hoy
+
+no debi hacerme el tonto cuando querias saber lo que me paso, y te pido perdon por eso amorcito. Ahora si ya no me hare wey
+
+y te dire de frente cuando algo me pasa, como tu lo haces conmigo. Gracias por estar ahi siempre para mi amorcito, te amo muchisimo 💗
+</p>
+
+    <audio controls>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio><br><br>
+
+    <button onclick="mostrar('menu')">Volver</button>
 </div>
 
-<div class="section" style="animation-delay:4s">
-  <p>Nuestro primer 14 de febrero fue especial, lleno de emoción, cariño y detalles que guardo con mucho amor. También recuerdo cada vez que veíamos videos de terror juntos o cuando compartimos momentos viendo "Son como niños" y riéndonos sin parar.</p>
-  <img src="Captura de pantalla (69).png">
+<!-- Fotos privadas -->
+<div id="fotos" class="section">
+    <h2>📸 Fotos especiales</h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+
+    <img src="privada1.jpg" width="200" style="border-radius: 10px;">
+    <img src="privada2.jpg" width="200" style="border-radius: 10px;">
+    <img src="privada3.jpg" width="200" style="border-radius: 10px;">
+    <img src="privada4.jpg" width="200" style="border-radius: 10px;">
+
+</div><br>
+
+<audio controls>
+        <source src="tierno.mp3" type="audio/mpeg">
+    </audio><br><br>
+
+<audio controls>
+        <source src="seven.mp3" type="audio/mpeg">
+    </audio><br><br>
+
+    <button onclick="mostrar('menu')">Volver</button>
 </div>
 
-<div class="section" style="animation-delay:5s">
-  <p>Con el tiempo compartimos mucho más… sueños, pensamientos, ilusiones sobre cómo sería vernos en persona. No todo fue perfecto, también tuvimos peleas, pero lo importante es que supimos resolverlas, aprender y seguir adelante juntos.</p>
+<!-- Video -->
+<div id="video" class="section">
+    <h2>🎬 Nuestro video</h2>
+
+    <video controls width="300" style="border-radius: 15px;">
+    <source src="video.mp4" type="video/mp4">
+</video><br><br>
+  
+   <p style="max-width: 600px; margin: auto; font-size: 18px; line-height: 1.6;">
+
+     De momento es esto, luego se viene nuestro anime jsjs
+     </p>
+
+    <button onclick="mostrar('menu')">Volver</button>
 </div>
 
-<div class="final">
-  <p>Mi amor, sigamos luchando por lo nuestro, sigamos siendo nosotros mismos, sin cambiar lo bonito que tenemos. Porque lo nuestro vale cada esfuerzo, cada momento y cada latido ❤️</p>
-</div>
+<div id="musica" class="section">
+    <h2>🎵 Nuestras canciones</h2>
+    
+    <p>Nuestra canción 1 💗</p>
+    <audio controls>
+        <source src="La mejor decision.mp3" type="audio/mpeg">
+    </audio><br><br>
 
+    <p>Nuestra cancion 2 ✨</p>
+    <audio controls>
+        <source src="No te rindas alejandra ❤.mp3" type="audio/mpeg">
+    </audio><br><br>
+
+    <p>Nuestra cancion 3 🥺</p>
+    <audio controls>
+        <source src="Seven light.mp3" type="audio/mpeg">
+        </audio><br><br>
+
+    <button onclick="mostrar('menu')">Volver</button>
 </div>
+    <div id="historia" class="section">
+    <h2>📖 Nuestra historia</h2>
+
+    <div style="
+        background: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        text-align: left;
+        line-height: 1.8;
+        font-size: 18px;
+    ">
+
+    <p><b>Capítulo 1: Cómo empezó todo 💗</b></p>
+    <p>
+    Jamas olvidaria ese sabado 24 de enero, aproximandamente serian a las 5 pm o 6, en las cuales me respondiste el mensaje un
+    "hola" que te envie unos 2 o 3 dias atras en la madrugada. En esas noches que uno no logra dormir y esta desvelado en el
+    telefono jeje, vi tu perfil y dije. Esta chica se ve bastante buena onda jsjs, y ahi envie el mensaje. Cuando me respondiste
+    tenia la duda si solo seria una charla corta de unos minutos, aunque si fue que te fuiste cuando te conte lo que me gustaba
+    lo bueno fue que volviste a retomar la charla, hablamos un poco del clima frio que hacia en ese entonces, tambien que estabas
+    enfermita y ibas a faltar al coro :c. Tambien te bromie con lo de pasarte una mantar (me queria lanzar con algo travieso pero
+    lo pense y dije no) Lo cambie y dije: quieres alguien que te abrigue? jsjsjs. Te dije que iria pero nelson no podia y me
+    dijiste: Ay que triste jsjs. Me presumiste tu hermosa voz, la principal de coro jsjs. Luego nos compartimos nuestro wsp y ig
+    para el video donde cantabas. Continuamos hablando ahi, me enviaste la primera foto, la del mameluco y la ame 😍, luego me 
+    propusiste para hacer llamada, aunque no se pudo ese mismo dia luego hablamos por fin y conocimos nuestras voces en vivo
+    (por que antes ya lo hicimos por un audio que te envie y tu por el video jsjs) ahi empezamos a enamorarnos...
+    </p>
+
+    <p><b>Capítulo 2: El inicio de nuestro amor y momentos inolvidables ✨</b></p>
+    <p>
+    Aun recuerdas la primera cosa que hicimos juntos? Te propuse ver una pelicula, tenia pensado que fuera "ralph el demoledor"
+    pero la reserve para luego y terminamos viendo "Son como niños" una de las tantas peliculas de Adam Samdler que me encantan
+    y yo se que igual a ti mi amorcito jsjs 😋, la pase bomba contigo(osea fenomenal jsjs) Luego viendo pucca algo que no pense hacer,
+    tambien ahi nos empezamos a coquetear un poquito entre nosotros 😘, y fue la primera vez tambien donde te quedaste dormida jsjsj 🥰.
+    Esto no fue solo una vez, lo hicimos varias veces: Intentamos ver la pelicula de "Your Name😝, la cual por desgracia no pudimos por
+    las partes que decian "bubbi" y nos fuimos a hacer llamada jaskask😘, luego tambien los videos de terror del canal de paranormal, que
+    quiero ver otra vez los videos contigo jsjs, y reintrego "NO TENIA MIEDO" JAKSAKS 😏😘. Despues con la pelicula que nos hizo llorar a ambos,
+    la de Marcelino pan y vino(Dios es una pelicula muy hermosa) 🥺💖, Luego no vimos mucho mas que videos de curiosidades, cerca de semana santa que;
+    Nos vivmos la pasion de cristo, una pelicual tambien hermosa que retrata la vida de nuestro salvador🤍, que la vimos entre dos dias por que no podimos
+    verla completa por lo fuerte que fue para ambos🥺, y actualmente hemos visto un anime(de romance que vi jsjs😋) Tonikaku Kawaii que nos encanto al 10 mil
+    millones porcierto jsjs😘, ya que nos recordo el amor puro y aveces travieso que tenemos 😋, Tambien de como seriamos si nos pudieramos casar ahora mismo y
+    vivir una vida de jovenes esposos 🥰. Luego ya aparte de ver cosas juntos, tambien disfrutamos mucho las llamadas😍. Primero eran las llamadas normales en las
+    cuales estabamos muy timidos hablando😳, despues una videollamada en la casa de mariam la primera de muchas si no me equivoco(tambien la primera donde se te
+    apago el telefono jsjs🙊) y luego se nos volvio costumbre hacerlas asi, yo me iba al la parte de atras de mi casa por privacidad, hablamos de lo de tu actividad
+    previa al 14 de febrero, que por cierto ese dia te hice un bonito video y nuestra musica jsjs 🤩, luego que saliste y la pasaste bien con tus amigas, el tour por
+    tu cuarto lo ame ❤, Despues como dije las llamadas fueron diarias en las cuales hablabamos de nuestro dias, jugabamos al basta o ahorcado jsjs 😁, tambien veiamos
+    Facebook y canciones(en una de esas llamadas me quede dormido y ronque🤪) Despues pasamos mas dias dandonos besos y cariño en las llamadas, tambien te mostre mi
+    hermosura que me cargo(cuerpo jsjs) tu tambien el tuyo a las gemelas y nos amamos mas al vernos eso jsjs 🥰. Para posteriormente ir al horario de adultos en las
+    llamadas jsjsj...
+    
+    </p>
+
+    <p><b>Capítulo 3: Incluso en las dificultades 🥺</b></p>
+    <p>
+    Todo lo contado parece que ha ido bien siempre, pero aveces no lo era 😭. Negarlo o saltar esa parte de nuestra historia seria tonto
+    ya que apesar de todo lo malo que hemos vivido como: Discuciones por palabras dichas, acciones inconcientes que no pensamos que nos
+    haria daño al otro 🥺, fue que nos hizo aveces no hablarnos o sentirnos disgustados😭. Cosa que casi nos cuesta nuestra relacion pero hemos sabido
+    manejar esas situaciones y afrontarlas de forma madura 💝: Analizandola y admitiendo nuestros errores, pediendo perdon y dejando eso para evitar
+    que todo lo feliz que vivimos se terminara pronto, ya que apenas esta empezando lo bueno y luego lo magnifico cuando nos juntemos y hagamos todo
+    tanto cosas amorosas y locuras 😘🥳.
+    </p>
+
+    <p><b>Capítulo 4: Lo que sigue 💫</b></p>
+    <p>
+    Lo que se conto apenas es lo que vivimos en 4 meses y se vendran mas cosas emocionantes y increibles, te lo garantizo mi amorcito 💖...
+    </p>
+
+    </div><br>
+
+    <button onclick="mostrar('menu')">Volver</button>
+</div>
+    <div id="nosotros" class="section">
+    <h2>💑 Tú y yo</h2>
+
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+        gap: 20px;
+        justify-content: center;
+    ">
+
+        <img src="nosotros1.jpg" style="
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        ">
+
+        <img src="nosotros2.jpg" style="
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        ">
+
+        <img src="nosotros3.jpg" style="
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        ">
+
+        <img src="nosotros4.jpg" style="
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        ">
+
+    </div><br>
+
+    <button onclick="mostrar('menu')">Volver</button>
+</div>
+    <div id="bio" class="section">
+    <h2>💑 Nuestra informacion</h2>
+
+    <div style="
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    ">
+
+        <!-- TU PERFIL -->
+        <div style="
+            text-align: center;
+            max-width: 250px;
+        ">
+            <img src="yo.jpg" width="200" style="border-radius: 15px;"><br><br>
+
+            <p><b>Jerson 💙</b></p>
+
+            <p style="line-height: 1.5;">
+            Me llamo Jerson Michel quintana Montero, un joven de 17
+            que tuvo la fortuna de conocer a la chica mas especial 
+            del mundo. Una tarde de verano paso. La conversacion mas casual
+            y la que parecia ser corta, pero el destino y dios ya habia dicho
+            que esto seria algo especial. Terminamos hablando ese dia, que parecia
+            aburrido para ambos. Nos conocimos a prufundidad, bromeamos, reimos y
+            chismeamos como si nos conocieramos de toda la vida, para en el futuro
+            terminar haciendo llamadas, viendo peliculas, dandonos cariño y afrontando los problemas con inteligencia 💖.
+
+            Y ahora yendo a por mas cosas juntos, mas momento felices y hasta 
+            el momento que pueda volar hacia mexico.
+            </p>
+        </div>
+
+        <!-- PERFIL DE ELLA -->
+        <div style="
+            text-align: center;
+            max-width: 250px;
+        ">
+            <img src="ella.jpg" width="200" style="border-radius: 15px;"><br><br>
+
+            <p><b>Alejandra 💗</b></p>
+
+            <p style="line-height: 1.5;">
+            Yo soy Alejandra Yeneedith Saucedo Perez, tengo 16 año, y recuerdo que era un dia muy aburrido y muy frio  para mi jsjs, y pues viendo mi celular, me di cuenta que tenia muchos mensajes que me mandaban (la verdad me daba hueva responder a todos y nomas miraba los perfiles y aver que tal jsjsjs) y me tope con su perfil, me dio mucha curiosidad la verdad ns porque, y pues le contesté (aunq si sentia pena porque llevaba 3 dias ese mensaje y no le respondia) y empezamos hablar , básicamente yo le presumia como cantaba y las millones de cosas que hacia, cuando hicimos nuestra primera llamada, la verdad me encantó su voz y pense esto no solamente va de ser un rato de hablar , esto va para mas
+            Jsjsjsjsjs 🤭😋
+            </p>
+        </div>
+
+    </div><br>
+
+    <button onclick="mostrar('menu')">Volver</button>
+</div>
+   
+    <!-- Plan de amor -->
+<div id="Plan de amor" class="section">
+    <h2>Plan de amor 💞</h2>
+
+  <p style="max-width: 600px; margin: auto; font-size: 18px; line-height: 1.6;">
+  Nuestro plan: 
+  -Yo terminar mi carrera de soporte tecnico.
+  -Mi amorcito terminar la prepa en un año
+  -Trabajar para reunir dinero e ir a mexico
+  -Mi amorcito, estudiar lo de embalzamado
+  -Estudiar en el tec ING Sistema
+  ...
+</p>
 
 <script>
-function iniciar() {
-  document.getElementById('loader').style.display = 'none';
-  document.querySelector('.content').style.display = 'block';
+function mostrar(id) {
+    let secciones = document.querySelectorAll('.section');
+    secciones.forEach(sec => sec.classList.remove('active'));
+
+    document.getElementById(id).classList.add('active');
 }
+
+/* Crear corazones */
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+
+}, 300);
 </script>
 
 </body>
